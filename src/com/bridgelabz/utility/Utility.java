@@ -10,7 +10,15 @@
 
 package com.bridgelabz.utility;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Utility {
+	
+	
+	  
+		  
+	  
 
 	/**
 	 * 
@@ -81,29 +89,97 @@ public class Utility {
 	/**
 	 * Purpose:This method checks the INPUT Year is Leap Year >=1582 or Not
 	 * @param year
+	 * @return 
 	 * @return  result:The Desired output the year is a Leap Year or not.
 	 */
-	public void Leapyearchecker(int year) {
+	public  void Leapyearchecker(int year) {
 		
 		if(year>=1582) //checks year is more than year 1582//
 
 			 if(((year%400 == 0)&& (year%100!=0))||(year%4==0)) //checks year by modulus 400==0 //by 100!=0//by 4==0
-			
+			 
 				System.out.println(+year+" year is a Leap Year");
-				
+			 
 			else
-				
+			{
 			
 				System.out.println(+year+" Year is not a Leap Year");
 			
-			else 
+			}			
+		    else 
 
-			{
-				System.out.println(+year+" year is Invaild");
-				}
-			
+		    {
+				System.out.println("year is Invaild");
+				
+		    }
+		
 		
 	}
+
+	public void spring(int month, int day) {
+		
+		if((month == 3)||(month == 4)||(month == 5)||(month == 6)&&(day<=31)||(day>=1))
+		{
+			
+		  System.out.println(" the Season is Spring Season");
+			
+	
+		}
+		else
+			
+		{ 
+			System.out.println("INVAILD SEASON");
+		}
+		
+		
+	}
+
+	public int sumofdice() {
+		int sum = 0;
+		Random r = new Random();
+		for(int i =1; i<=2;i++)
+		{
+			sum = sum + r.nextInt(6);
+		}
+		
+		
+		System.out.println("Sum of two random number on dice  "+sum);
+		return sum;
+		
+	}
+
+	public void primechecker() {
+		
+	     int startindex,endindex;
+	     Scanner scanner = new Scanner(System.in);
+			System.out.println("enter the start value:");
+			startindex = scanner.nextInt();
+			System.out.println("enter the last value");
+			endindex = scanner.nextInt();
+	     
+         int i,count,number;
+		
+		for(number=startindex;number<=endindex;number++)
+		{
+			count = 0;
+			
+			for(i=2;i<=number/2;i++){
+	             if(number%i==0){
+	                 count++;
+	                 break;
+	             }
+	             
+			}
+			if(count==0 && number!= 1)
+	             
+	            	 System.out.println(number);
+	             
+			scanner.close();
+		
+		
+	}
+
+	
 
 	//public void error(int hello, int world)
 	//{
@@ -126,7 +202,8 @@ public class Utility {
 		
 		
 		
-		
 	}
+}
+	
 
 //}

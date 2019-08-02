@@ -18,16 +18,17 @@ public class LeapYear {
 	{
 		
 		Scanner scan = new Scanner(System.in);
-		Utility utility = new Utility();
-		int year;
-		System.out.println("ENTER THE YEAR: ");
-		year = scan.nextInt();
+	     Utility utility = new Utility();
+	     System.out.println("ENTER THE YEAR: ");
+		int year = scan.nextInt();
+		
+		
 		utility.Leapyearchecker(year);
 		
 		
 	
 			
-		  scan.close();
+		  
 	}
 	
   

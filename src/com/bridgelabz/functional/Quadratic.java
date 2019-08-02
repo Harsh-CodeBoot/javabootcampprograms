@@ -2,33 +2,47 @@ package com.bridgelabz.functional;
 
 import java.util.Scanner;
 
-import com.bridgelabz.utility.Utility;
-
+//import com.bridgelabz.utility.Utility;
+import static java.lang.Math.*;
 public class Quadratic {
 
 	public static void main(String[] args) {
 		
 		
 		Scanner scan = new Scanner(System.in);
-		//Utility utility = new Utility();
-		double input1;
-		input1 = scan.nextDouble();
-        double input2;
-        input2 = scan.nextDouble();
-        double input3 = scan.nextDouble();
+	
+		double a;
+		a = scan.nextDouble();
+        double b;
+        b = scan.nextDouble();
+        double c = scan.nextDouble();
              
-        double delta = input2*input2-4*input1*input3;
+        double delta = b*b-4*a*c;
         double root1=0;
         double root2=0;
+        
         double squareroot = Math.sqrt(delta);
+       
         
-        root1 = (-input2+squareroot)/(2*input1);
-        root2 = (-input2-squareroot)/(2*input1);
+        if(delta<0.0) 
         
-        System.out.println(root1);
-        System.out.println(root2);
+        {
+        	
+        System.out.println(" No Real Roots ");
+          
+        }
         
-        
+        else
+        {
+        	
+        	
+        	root1 = ((-b+squareroot)/(2*a));
+            root2 = ((-b-squareroot)/(2*a));
+            
+            System.out.println(root1);
+            System.out.println(root2);
+        	
+        }
         
         
         
@@ -36,9 +50,9 @@ public class Quadratic {
         
         
 		
-        //utility.quadraticoperations(input1,input2,input3)
         
-		scan.close();
+        
+	
 
 	}
 

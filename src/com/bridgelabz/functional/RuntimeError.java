@@ -7,7 +7,7 @@
  *  @since   31-07-2019
  *
  ******************************************************************************/
-package com.bridgelabz.functional;
+/*package com.bridgelabz.functional;
 
 import com.bridgelabz.utility.Utility;
 
@@ -26,4 +26,4 @@ public class RuntimeError {
 	
 
 }
- 
+ */
