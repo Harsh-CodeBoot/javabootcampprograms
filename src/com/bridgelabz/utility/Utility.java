@@ -203,7 +203,136 @@ public class Utility {
 		
 		
 	}
-}
-	
 
-//}
+	public void harmonic() 
+		{
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("enter the nth number: ");
+		int input = scanner.nextInt();
+		
+		double sum = 0.0;
+		for (int i = 1; i <= input; i++) {
+            sum += 1.0 / i;
+        }
+
+        
+        System.out.println(sum);
+		
+		
+		}
+
+	public void Rolldice() {
+	 
+		int side;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Roll the dice : ");
+		side = scanner.nextInt();
+		int roll = (int)(Math.random()*side)+1;
+		System.out.println("The Desired output is :"+roll);
+		
+      		
+		scanner.close();
+		
+		
+		
+		
+	}
+
+	public void RepeatingNumbers() {
+	
+		int i,j;
+		int k = 0;
+		int num;
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("enter the elements: ");
+		num = scanner.nextInt();
+		int arr[]= new int[10];
+		arr[k]=scanner.nextInt();
+	
+		for(i =0;i<arr.length;i++)
+		{
+			
+			for(j=i+1;j<arr.length;j++)
+			{
+				if(arr[i]==arr[j])
+					System.out.println(arr[j]+"  ");
+				
+				
+			}
+		
+		}
+		scanner.close();
+		
+	}
+
+	public void Windchillfunc()
+	{    
+		Scanner scan = new Scanner(System.in);
+		double temp; 
+		System.out.println("ENTER THE TEMPERATURE");
+		temp = scan.nextDouble();
+        double speed ;
+        System.out.println("ENTER THE SPEED");
+        speed = scan.nextDouble();
+        double windchill = 35.74 + 0.6215*temp + (0.4275*temp - 35.75) * Math.pow(speed, 0.16);
+        
+        System.out.println(" THE WIND CHILL IS  " + windchill);		
+		
+	}
+
+	public void Tempconvert() {
+	
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("input the temperature");
+		float temperature;
+		temperature = scan.nextFloat();
+		
+		
+		
+		      float fahrenhit;
+               fahrenhit = (temperature*9/5)+32 ;
+		  
+	  System.out.println("the temperature in fahrenhit  "+fahrenhit);
+	      
+	  
+		   
+		  float celsius;
+		
+		celsius = (fahrenhit-32)*5/9;
+		System.out.println(" temperature in celsius "+celsius);
+		
+		}
+
+	public void elementchecker() {
+		
+				 
+        int num,temp;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter numbers of elements:");
+        num = s.nextInt();
+        int arr[] = new int[num];
+        System.out.println("Enter all the elements:");
+        for (int i = 0; i < num; i++) 
+        {
+            arr[i] = s.nextInt();
+        }
+        for (int i = 0; i < num; i++) 
+        {
+            for (int j = i + 1; j < num; j++) 
+            {
+                if (arr[i] > arr[j]) 
+                {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println("Second Largest:"+arr[num-2]);
+        System.out.println("Smallest:"+arr[1]);
+	
+}
+}
