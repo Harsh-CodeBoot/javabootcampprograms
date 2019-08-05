@@ -1,40 +1,36 @@
 package com.bridgelabz.functional;
 
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+
 public class PrintInitials {
 	
 	
 	public static void main(String args[])
 	{
-		
-		
-		
-		 for (int i = 9; i >= 0; i--)
-	        {
-	            
-	            	
-
-	            for (int j = i; j >= 0; j--)
-	            {
-	                System.out.print("*");
-	            }
-	            System.out.println();
-	        }
-
-	        for (int i = 0; i <= 9; i++)
-	        {
-	            
-	            for (int j = i; j >= 0; j--)
-	            {
-	                System.out.print("*");
-	            }
-	            System.out.println();
-	        }
+		    char pattern ;
+		    Scanner scanner = new Scanner(System.in);
+		    Utility utility = new Utility();
+		    System.out.println("enter the character you want to print");
+		    pattern = scanner.next().charAt(0);
+		    utility.patternprint(pattern);
+		    
+	
+	
+	
+	scanner.close();
+	
+	
+	
+	
+	}
 	    }
 	
 		
 		
 		
 		
-	}
+	
 
 
