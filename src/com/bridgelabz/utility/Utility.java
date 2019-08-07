@@ -11,6 +11,7 @@
 package com.bridgelabz.utility;
 
 import java.util.Random;
+
 import java.util.Scanner;
 
 public class Utility {
@@ -187,7 +188,8 @@ public class Utility {
 	             
 	            	 System.out.println(number);
 	             
-			scanner.close();
+			
+		}
 		
 		
 	}
@@ -201,21 +203,7 @@ public class Utility {
 		
 	//}
 
-	/**
-	 * 
-	 * Purpose: To Find the Roots of the Equation a*x*x + b*x + c.
-	 * @param input1
-	 * @param input2
-	 * @param input3
-	 */
-	//public void quadraticoperations(double input1, double input2, double input3) {
-		
-		//double delta = input2*input2-4*input1*input3;
-		
-		
-		
-		
-	}
+	
 
 	/**
 	 * purpose: To check Harmonic number.
@@ -239,6 +227,7 @@ public class Utility {
         System.out.println(sum);
 		
 		
+        scanner.close();
 		}
 
 	/**
@@ -364,22 +353,24 @@ public class Utility {
 	
 }
 
-	public void loanchecker(int year, int principle, int rate) {
-		int payment ;
-        int R;
+	public void loanchecker(double year, double principal, double rate) {
+		double payment ;
+        double R;
 	
-        R = rate/(12*100);
+      
+        double n = 12*year;
 		
-		
-		if(principle>0)
+		if(principal>0)
 		{
-			int n = 12*year;
-			R = rate/(12*100);
-			payment = principle*R/1-(1+R)^(-n);
+			
+			R = (rate/ 100) / 12;
+			payment = (principal*R)/(1-Math.pow(1+R,-n));
+			double interest = payment*n - principal;
 			System.out.println(" payment = "+payment);
+			System.out.println(" Total interest = "+interest);
 			
 		}
-		else if((principle==0)&&(year==0)&&(rate==0))
+		else if((principal==0)&&(year==0)&&(rate==0))
 		{
 			
 			System.out.println("Please enter vaild value");
@@ -448,5 +439,89 @@ public class Utility {
 		
 	}
 
+	public void dayweekchecker(int month, int year, int day) {
+		 int m0;
+	     int y0;
+	     int  x;
+	     int d0;
+	      y0 = year-(14-month)/12;
+	      x = y0+y0/4-y0/100+y0/400;
+	      m0 =month+12*((14-month)/12)-2;
+	      d0 =(day+x+31*m0/12)%7;
+	      
+	     if(d0==0)
+	     {
+	    	 System.out.println("The day is sunday");
+	     }
+	     else if(d0==1)
+	     {
+	    	 System.out.println("The day is monday");
+	     }
+	     else if(d0==2)
+	     {
+	    	 System.out.println("The day is Tuesday");
+	     }
+	     else if(d0==3)
+	     {
+	    	 System.out.println("The day is wednesday");
+	     }
+	     else if(d0==4)
+	     {
+	    	 System.out.println("The day is thursday");
+	     }
+	     else if(d0==5)
+	     {
+	    	 System.out.println("The day is friday");
+	     }
+	     else if(d0==6)
+	     {
+	    	 System.out.println("The day is saturday");
+	    
+	}
+
+
+		
+	}
+
+	public void quadraticchecker(double num1, double num2, double num3) {
+		 double delta = num2*num2-4*num1*num3;
+	        double root1=0;
+	        double root2=0;
+	        
+	        double squareroot = Math.sqrt(delta);
+	       
+	        
+	        
+	        
+	        
+	        	
+	        	root1 = ((-num2+squareroot)/(2*num1));
+	            root2 = ((-num2-squareroot)/(2*num1));
+	            
+	            System.out.println(root1);
+	            System.out.println(root2);
+	        	
+	      
+	        
+	        
+		
+	}
+
+	public void trig(double radians,double degrees) {
+		double sin = Math.sin(radians);
+        System.out.println("sin of the degree(" + degrees + ") = " + sin);
+
+        double cos = Math.cos(radians);
+        System.out.println("cos of the degree(" + degrees + ") = " + cos);
+
+        double tan = Math.tan(radians);
+        System.out.println("tan of the degree(" + degrees + ") = " + tan);
+        System.out.println(sin + " / " + cos + " = " + sin / cos);
+
+        double radian = sin*sin + cos*cos;
+        System.out.println(sin*sin + " + " + cos*cos + " = " + radian);
+		
+	}
 
 	}
+	

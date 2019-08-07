@@ -20,17 +20,17 @@ public class CarLoan {
 		Utility utility = new Utility();
 		
 		System.out.println("Enter year");
-		int year;
+		double year;
 		 year = scan.nextInt();
-		 System.out.println("Enter principle");
-		int principle;
-		principle = scan.nextInt();
+		 System.out.println("Enter principal");
+		double principal;
+		principal = scan.nextInt();
 		System.out.println("Enter rate");
 		
-		int rate;
+		double rate;
 		rate = scan.nextInt();
 		
-		utility.loanchecker(year,principle,rate);
+		utility.loanchecker(year,principal,rate);
 		scan.close();
 	}
 }
