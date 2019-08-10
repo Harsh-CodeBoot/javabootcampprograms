@@ -9,7 +9,9 @@
  ******************************************************************************/
 
 package com.bridgelabz.utility;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 import java.util.Random;
 
 import java.util.Scanner;
@@ -523,5 +525,84 @@ public class Utility {
 		
 	}
 
-	}
+	public static boolean anagramchecker(String str1, String str2) {
+		
+		char[] char1 = str1.toCharArray();
+		char[] char2 = str2.toCharArray();
+		Arrays.sort(char1);
+		Arrays.sort(char2);
+		return Arrays.equals(char1, char2);
+				
+		}
+
+	public boolean palindromechecker() {
+		String str1= "radar";
+		String str2="";
+		int length = str1.length();
+		
+		for( int i=length - 1; i>=0; i--)
+		
+			
+			str2 = str2 + str1.charAt(i);
+		
+		
+		if(str1.equals(str2))
+		
+		{
+			System.out.println("The string is palindrome");
+		
+		}
+		else
+		{
+			System.out.println("The string is not palindrome");
+		
+		
+		}
+	return true;
 	
+	}
+
+	public static void printpermutation(String str,String end) {
+		
+		
+		
+		if(str.length()==0)
+		{
+			System.out.println(end+" ");
+			return ;
+			}
+		
+		for(int i = 0; i<str.length();i++)
+		{
+			char ch = str.charAt(i);
+			
+			String rev = str.substring(0,i)+str.substring(i+1);
+			printpermutation(rev,end+ch);
+		}
+		
+		
+		
+		
+	}
+
+	public void iterationpermutation(String str) {
+		
+		List<String> partial = new ArrayList<>();
+		partial.add(String.valueOf(str.charAt(0)));
+		for(int i =1;i<str.length();i++)
+		{
+			for(int j = partial.size()-1;j>=0;j--)
+			{
+				String str1 = partial.remove(j);
+			
+		  for(int k =0;k<=str1.length();k++)
+			  
+		  {
+		         partial.add(str1.substring(0,k)+ str.charAt(i)+str1.substring(k));
+		  }
+	}
+}
+		
+		System.out.println(partial);
+}
+}
